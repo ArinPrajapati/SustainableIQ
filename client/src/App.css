@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("./fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf") format("truetype"),
+    url("./fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf") format("truetype"),
+    url("./fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf") format("truetype"),
+    url("./fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf") format("truetype"),
+    url("./fonts/IBM_Plex_Sans/IBMPlexSans-BoldItalic.ttf") format("truetype"),
+    url("./fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Istok Web";
+  src: url("./fonts/Istok_Web/IstokWeb-Regular.ttf") format("truetype"),
+    url("./fonts/Istok_Web/IstokWeb-Bold.ttf") format("truetype"),
+    url("./fonts/Istok_Web/IstokWeb-BoldItalic.ttf") format("truetype"),
+    url("./fonts/Istok_Web/IstokWeb-Italic.ttf") format("truetype");
+}
+
+body {
+  --red: #ff0055;
+  background-color: black;
+}
+
+.font-IBMPlexMono {
+  font-family: "IBM Plex Mono";
+}
+
+.font-IstokWeb {
+  font-family: "Istok Web";
+}
+
+.font-IstokWeb-Bold {
+  font-family: "Istok Web";
+  font-weight: 700;
+}
+
+.logo {
+  font-family: Istok Web;
+  font-size: 43px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: linear-gradient(
+    322deg,
+    #c238b5 87.93%,
+    #ff004d 93.47%,
+    #65daf7 126.77%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-blur {
+  background: rgba(0, 0, 0, 0.743);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(19.3px);
+  -webkit-backdrop-filter: blur(13.3px);
+}
+
+body {
+  overflow-x: unset;
+}
+
+.heromedia {
+  width: 100%; /* or set a specific width */
+  height: auto; /* or set a specific height */
+  overflow-x: hidden;
+}
+
+.textBlueGreen {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-blue-400 backdrop:shadow-md;
+}
+
+.progress-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: rgb(254, 34, 34);
+  background: linear-gradient(
+    149deg,
+    rgba(254, 34, 34, 1) 0%,
+    rgba(230, 34, 226, 1) 100%
+  );
+  transform-origin: 0%;
+  z-index: 9999;
+}
+
+/* swiper class */
+
+.swiper {
+  width: 100%;
+  height: fit-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: contain;
+  width: 800px;
+  height: 400px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+}
