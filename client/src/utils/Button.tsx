@@ -13,6 +13,7 @@ const Button = (props: Props) => {
       type="button"
       style={{ backgroundColor: props.color }}
       className={`px-8 py-3 font-semibold rounded    ${props.extraClasses}`}
+      onClick={props.onClick}
     >
       {props.text}
     </button>

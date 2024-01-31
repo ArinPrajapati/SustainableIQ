@@ -114,3 +114,21 @@ body {
   width: 100%;
   object-fit: contain;
 }
+
+/* media queries  for mobile */
+@media (max-width: 768px) {
+  .swiper {
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .hideInMobile{
+    display: none;
+  }
+
+  .showInMobile{
+    display: block;
+  }
+}
