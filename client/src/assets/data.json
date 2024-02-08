@@ -1,0 +1,27 @@
+{
+  "data": [
+    {
+      "title": "Sample Post Title",
+      "subtitle": "Sample Post Subtitle",
+      "content": "# Heading\n\nThis is a **sample post** content with *markdown*.",
+      "authorId": "61d02aa5c8d78f1234567890",
+      "imgLink": "https://picsum.photos/700/600",
+      "createdAt": "2024-02-06T12:00:00.000Z",
+      "updatedAt": "2024-02-06T12:00:00.000Z",
+      "viewCont": 100,
+      "likeCont": 50
+    },
+
+    {
+      "title": "Sample Post Title 2",
+      "subtitle": "Sample Post Subtitle 2",
+      "authorId": "61d02aa5c8d78f1234567890",
+      "content": "## Heading\n\nThis is the first sample comment with **bold** and *italic* text.",
+      "imgLink": "https://picsum.photos/700/700",
+      "createdAt": "2024-02-06T12:00:00.000Z",
+      "updatedAt": "2024-02-06T12:00:00.000Z",
+      "viewCont": 100,
+      "likeCont": 50
+    }
+  ]
+}

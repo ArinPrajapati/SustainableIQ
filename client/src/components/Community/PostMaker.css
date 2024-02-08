@@ -1,0 +1,73 @@
+.markdown-container {
+  background-color: white;
+  padding: 20px;
+  /* border-radius: 10px; */
+
+  font-size: large;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.markdown-container > h1 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.markdown-container > h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.markdown-container > h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.markdown-container > h4 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.markdown-container > h5 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.markdown-container > h6 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.markdown-container > p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.markdown-container > ul {
+  margin-bottom: 20px;
+}
+
+.markdown-container > ol {
+  margin-bottom: 20px;
+}
+
+.markdown-container > pre > code {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  background-color: #dfdddd;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+}
+
+.markdown-container > li {
+  margin-bottom: 10px;
+}

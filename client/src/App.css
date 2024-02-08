@@ -124,11 +124,11 @@ body {
     padding-bottom: 50px;
   }
 
-  .hideInMobile{
+  .hideInMobile {
     display: none;
   }
 
-  .showInMobile{
+  .showInMobile {
     display: block;
   }
 }

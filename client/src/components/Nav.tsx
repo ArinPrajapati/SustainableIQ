@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/img/logo.svg";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { fadeAnimation, rotateAnimation } from "../helpers/animations";
 import { Link } from "react-router-dom";
 import { Spin as Hamburger } from "hamburger-react";
+import { useSelector, useDispatch } from "react-redux"; // Import corrected
+import {
+  selectCurrentPage,
+  setCurrentPage,
+} from "../store/feature/currentPageSlice"; // Import setCurrentPage action
 
 const Nav = () => {
+  const currentPage = useSelector(selectCurrentPage);
+  const dispatch = useDispatch();
+
   const active = "text-orange-500 underline underline-offset-8 ";
   const { scrollYProgress } = useScroll();
   const [isOpen, setOpen] = useState(false);
+  const [current, setCurrentPage] = useState("");
+
+  useEffect(() => {
+    setCurrentPage(currentPage);
+  }, [currentPage, dispatch]);
+
+  // Function to handle link click and dispatch action to update current page
+  const handleLinkClick = (page: string) => {
+    dispatch(setCurrentPage(page));
+    setOpen(false); // Close the mobile menu after link click
+  };
 
   return (
     <>
@@ -22,22 +41,60 @@ const Nav = () => {
           />
         </motion.div>
         <div className="hideInMobile flex flex-row text-purple-600 gap-8 items-end text-[20px] ">
-          <Link to="/" className={` ${active} hover:text-blue-700 transition `}>
+          <Link
+            to="/"
+            onClick={() => handleLinkClick("home")}
+            className={`${
+              currentPage === "home"
+                ? "text-orange-500 underline underline-offset-8"
+                : ""
+            } hover:text-blue-700 transition`}
+          >
             Home
           </Link>
-          <a href="#about" className=" hover:text-blue-700 transition">
+          <a
+            href="#about"
+            onClick={() => handleLinkClick("about")}
+            className={`${
+              currentPage === "about" ? active : ""
+            } hover:text-blue-700 transition`}
+          >
             Learn
           </a>
-          <Link to="#services" className=" hover:text-blue-700 transition">
+          <Link
+            to="#services"
+            onClick={() => handleLinkClick("services")}
+            className={`${
+              currentPage === "services" ? active : ""
+            } hover:text-blue-700 transition`}
+          >
             Challenges
           </Link>
-          <a href="#resources" className=" hover:text-blue-700 transition">
+          <a
+            href="#resources"
+            onClick={() => handleLinkClick("resources")}
+            className={`${
+              currentPage === "resources" ? active : ""
+            } hover:text-blue-700 transition`}
+          >
             Resources
           </a>
-          <Link to="/community" className=" hover:text-blue-700 transition">
-            Comunity
+          <Link
+            to="/community"
+            onClick={() => handleLinkClick("community")}
+            className={`${
+              currentPage === "community" ? active : ""
+            } hover:text-blue-700 transition`}
+          >
+            Community
           </Link>
-          <a href="#New" className=" hover:text-blue-700 transition">
+          <a
+            href="#New"
+            onClick={() => handleLinkClick("news")}
+            className={`${
+              currentPage === "news" ? active : ""
+            } hover:text-blue-700 transition`}
+          >
             News
           </a>
         </div>
@@ -52,23 +109,56 @@ const Nav = () => {
             >
               <Link
                 to="/"
-                className={` ${active} hover:text-blue-700 transition `}
+                onClick={() => handleLinkClick("home")}
+                className={`${
+                  currentPage === "home" ? active : ""
+                } hover:text-blue-700 transition`}
               >
                 Home
               </Link>
-              <a href="#about" className=" hover:text-blue-700 transition">
+              <a
+                href="#about"
+                onClick={() => handleLinkClick("about")}
+                className={`${
+                  currentPage === "about" ? active : ""
+                } hover:text-blue-700 transition`}
+              >
                 Learn
               </a>
-              <Link to="#services" className=" hover:text-blue-700 transition">
+              <Link
+                to="#services"
+                onClick={() => handleLinkClick("services")}
+                className={`${
+                  currentPage === "services" ? active : ""
+                } hover:text-blue-700 transition`}
+              >
                 Challenges
               </Link>
-              <a href="#resources" className=" hover:text-blue-700 transition">
+              <a
+                href="#resources"
+                onClick={() => handleLinkClick("resources")}
+                className={`${
+                  currentPage === "resources" ? active : ""
+                } hover:text-blue-700 transition`}
+              >
                 Resources
               </a>
-              <Link to="/community" className=" hover:text-blue-700 transition">
-                Comunity
+              <Link
+                to="/community"
+                onClick={() => handleLinkClick("community")}
+                className={`${
+                  currentPage === "community" ? active : ""
+                } hover:text-blue-700 transition`}
+              >
+                Community
               </Link>
-              <a href="#New" className=" hover:text-blue-700 transition">
+              <a
+                href="#New"
+                onClick={() => handleLinkClick("news")}
+                className={`${
+                  currentPage === "news" ? active : ""
+                } hover:text-blue-700 transition`}
+              >
                 News
               </a>
             </motion.div>

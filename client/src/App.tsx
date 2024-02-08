@@ -3,6 +3,7 @@ import { Nav } from "./components";
 import Footer from "./components/Footer";
 import Loading from "./helpers/Loading";
 import { Home } from "./pages";
+import ImageUpload from "./components/ImageUpload";
 import { motion, useScroll } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Community from "./pages/Community";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Loading />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/image" element={<ImageUpload />} />
         </Routes>
 
         <Footer />
