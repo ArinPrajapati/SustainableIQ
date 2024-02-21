@@ -1,17 +1,19 @@
 import React from "react";
+import PostReaction from "./PostReaction";
 
 interface Props {
   title: string | undefined;
   imgLink: string | undefined;
   subtitle: string | undefined;
+  postId: string | undefined;
 }
 
-const PostCard = ({ title, subtitle, imgLink }: Props & {}) => {
+const PostCard = ({ title, subtitle, imgLink, postId }: Props) => {
   return (
     <div className="text-3xl">
       {" "}
       <div className="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-        <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600 ">
+        <div className="relative mx-4 -mt-6 h-44 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600 ">
           <img src={imgLink} alt="" className="w-full object-contain " />
         </div>
         <div className="p-6">
@@ -22,6 +24,7 @@ const PostCard = ({ title, subtitle, imgLink }: Props & {}) => {
             {subtitle}
           </p>
         </div>
+        <PostReaction postId={postId} />
         <div className="p-6 pt-0">
           <button
             data-ripple-light="true"

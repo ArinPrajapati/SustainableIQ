@@ -1,12 +1,19 @@
 import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
+
 import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { useCreatePostMutation } from "../../store/api/postApi";
+
 import "./PostMaker.css";
 import ImageUpload from "../ImageUpload";
 const PostMaker = () => {
   const [markdown, setMarkdown] = useState("");
   const [imageLink, setImageLink] = useState<string | undefined>("");
+  const {createApi } = useCreatePostMutation()
+
+  const createPost = (e) => {
+    
+  };
+
   return (
     <div className="w-1/2 absolute z-20 shadow-md rounded-[10px] left-[35rem]  bg-white">
       <h1 className="text-3xl font-IBMPlexMono w-full text-center text-white  rounded-t-[10px] mb-4 p-2 bg-slate-500">

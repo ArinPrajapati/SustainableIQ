@@ -16,7 +16,7 @@ export class ForumPostController {
     res: Response
   ): Promise<string | void | Response> {
     try {
-      const { title, subtitle, content, authorId } = req.body;
+      const { title, subtitle, content, authorId, imgLink } = req.body;
       if (!title || !subtitle || !content || !authorId) {
         return res.status(400).json({ message: "All fields are required" });
       }
@@ -26,6 +26,7 @@ export class ForumPostController {
         subtitle,
         content,
         authorId,
+        imgLink,
       });
 
       if (!create) {
@@ -78,6 +79,7 @@ export class ForumPostController {
   ): Promise<string | void | Response> {
     try {
       const { id } = req.params;
+
       const addLike = await ForumPost.updateOne(
         { _id: id },
         { $inc: { likeCont: 1 } }

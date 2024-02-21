@@ -7,6 +7,7 @@ import ImageUpload from "./components/ImageUpload";
 import { motion, useScroll } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Community from "./pages/Community";
+import PostPage from "./pages/PostPage";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -21,8 +22,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Loading />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/image" element={<ImageUpload />} />
+          <Route path="/community">
+            <Route index element={<Community />} />
+            <Route path=":id" element={<PostPage />} />
+          </Route>
         </Routes>
 
         <Footer />

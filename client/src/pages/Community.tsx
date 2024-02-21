@@ -4,7 +4,7 @@ import Button from "../utils/Button";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import PostMaker from "../components/Community/PostMaker";
-import PostCard from "../components/Community/PostCard";
+import PostCard from "../components/Community/Post/PostCard";
 import PostHolder from "../components/Community/PostHolder";
 
 const Community = () => {

@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get("/", ForumPostController.getMessage);
 router.post("/add", ForumPostController.createMessage);
-router.delete("/:id", ForumPostController.deleteMessage);
+router.delete("delete/:id", ForumPostController.deleteMessage);
+router.put("/addView/:id", ForumPostController.AddView);
+router.put("/addLike/:id", ForumPostController.AddLike);
 
 export default router;
