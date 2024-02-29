@@ -36,7 +36,7 @@ const Nav = () => {
           <motion.img
             src={logo}
             alt=""
-            className="w-[100px] origin-[0%] "
+            className="w-[80px] sm:w-[100px] origin-[0%] "
             style={{ rotateX: scrollYProgress }}
           />
         </motion.div>
@@ -88,15 +88,15 @@ const Nav = () => {
           >
             Community
           </Link>
-          <a
-            href="#New"
+          <Link
+            to="/news"
             onClick={() => handleLinkClick("news")}
             className={`${
               currentPage === "news" ? active : ""
             } hover:text-blue-700 transition`}
           >
             News
-          </a>
+          </Link>
         </div>
         <div className="showInMobile text-white hidden">
           <Hamburger toggled={isOpen} toggle={setOpen} />

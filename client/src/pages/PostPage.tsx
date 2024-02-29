@@ -1,8 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Post from "../components/Community/Post/Post";
 const PostPage = () => {
   const { id } = useParams();
-  return <div>PostPage : {id}</div>;
+  const postId = id || "";
+  return (
+    <div>
+      <Post id={postId} />
+    </div>
+  );
 };
 
 export default PostPage;

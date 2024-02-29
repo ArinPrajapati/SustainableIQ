@@ -5,7 +5,7 @@ export class ForumPostController {
   public static async getMessage(req: Request, res: Response): Promise<void> {
     try {
       const find = await ForumPost.find();
-      res.status(200).json({ message: find });
+      res.status(200).json({ post: find });
     } catch (error) {
       res.status(500).json({ message: error });
     }
@@ -89,6 +89,22 @@ export class ForumPostController {
         return res.status(500).json({ message: "Error adding like" });
       }
       res.status(200).json({ message: addLike });
+    } catch (error) {
+      res.status(500).json({ message: error });
+    }
+  }
+
+  public static async getPostById(
+    req: Request,
+    res: Response
+  ): Promise<string | void | Response> {
+    try {
+      const { id } = req.params;
+      const post = await ForumPost.findById(id);
+      if (!post) {
+        return res.status(500).json({ message: "No post found" });
+      }
+      res.status(200).json({ message: "success", post: post });
     } catch (error) {
       res.status(500).json({ message: error });
     }

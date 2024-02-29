@@ -44,6 +44,14 @@ export const postApi = createApi({
       }),
       invalidatesTags: ["Post"],
     }),
+
+    getPostById: builder.query({
+      query: (id) => ({
+        url: `get/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["Post"],
+    }),
   }),
 });
 
@@ -53,4 +61,5 @@ export const {
   useDeletePostMutation,
   useAddLikeMutation,
   useAddViewMutation,
+  useGetPostByIdQuery,
 } = postApi;

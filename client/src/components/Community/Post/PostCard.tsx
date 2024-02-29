@@ -1,14 +1,24 @@
 import React from "react";
 import PostReaction from "./PostReaction";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string | undefined;
   imgLink: string | undefined;
   subtitle: string | undefined;
   postId: string | undefined;
+  likes: number | undefined;
+  views: number | undefined;
 }
 
-const PostCard = ({ title, subtitle, imgLink, postId }: Props) => {
+const PostCard = ({
+  title,
+  subtitle,
+  imgLink,
+  postId,
+  likes,
+  views,
+}: Props) => {
   return (
     <div className="text-3xl">
       {" "}
@@ -24,15 +34,17 @@ const PostCard = ({ title, subtitle, imgLink, postId }: Props) => {
             {subtitle}
           </p>
         </div>
-        <PostReaction postId={postId} />
+        <PostReaction views={views} likes={likes} />
         <div className="p-6 pt-0">
-          <button
-            data-ripple-light="true"
-            type="button"
-            className="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          >
-            Read More
-          </button>
+          <Link to={`/community/${postId}`}>
+            <button
+              data-ripple-light="true"
+              type="button"
+              className="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            >
+              Read More
+            </button>
+          </Link>
         </div>
       </div>
     </div>

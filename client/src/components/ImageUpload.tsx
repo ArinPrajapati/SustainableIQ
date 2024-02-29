@@ -7,7 +7,7 @@ interface Props {
 
 const ImageUpload: React.FC<Props> = ({ setImageLink }) => {
   const [image, setImage] = React.useState<File | undefined>();
-  const [uploadImage, { isLoading, data }] = useUploadImageMutation();
+  const [uploadImage, { isLoading, data, isError }] = useUploadImageMutation();
 
   useEffect(() => {
     const upload = async () => {
@@ -17,7 +17,7 @@ const ImageUpload: React.FC<Props> = ({ setImageLink }) => {
       try {
         const responseData = await uploadImage(image);
         console.log("Image uploaded successfully:", responseData);
-        setImageLink(responseData.data.url);
+        setImageLink(responseData?.data.url);
       } catch (error) {
         console.error("Error uploading image:", error);
       }
