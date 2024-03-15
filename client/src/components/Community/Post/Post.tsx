@@ -33,14 +33,14 @@ const Post: React.FC<PostProps> = ({ id }) => {
     return <div className="text-white">Loading...</div>;
   }
   return (
-    <div className="text-white bg-slate-950 w-full py-5 md:w-fit md:mx-auto h-fit ">
+    <div className="text-white bg-slate-950 w-full py-5 md:w-fit md:mx-auto h-fit md:min-w-[600px]">
       <div className="flex font-sans justify-between items-center mb-4 px-2">
         <div className="text-white text-4xl flex justify-center items-center gap-4 ">
           {" "}
           <FaRegUserCircle /> user{" "}
         </div>
 
-        <div className="relative w-fit h-fit">
+        <div className="relative w-fit h-fit flex">
           <button className="flex gap-2 justify-center items-center text-3xl bg-[#f0f0f02d] p-2 m-2 mr-0 rounded-md rounded-r-none  active:scale-95 transition-transform z-[35] ">
             <AiOutlineLike /> {data?.post.likeCont}
           </button>

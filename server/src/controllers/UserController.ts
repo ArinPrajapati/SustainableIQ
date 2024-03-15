@@ -9,8 +9,8 @@ dotenv.config();
 export class UserController {
   // getAlluser method for admin only
   public static async getAllUsers(
-    res: Response,
-    req: Request
+    req: Request,
+    res: Response
   ): Promise<void | string | Response> {
     try {
       const users = await User.find();
@@ -36,7 +36,7 @@ export class UserController {
       if (specialCharsRegex.test(name)) {
         return res
           .status(400)
-          .json({ message: "Name must not contain special characters" });
+          .json({ message: "Name  must not contain special characters and numbers" });
       }
       if (password.length < 8) {
         return res
@@ -48,7 +48,7 @@ export class UserController {
       const hashedPassword = await bcytpt.hash(password, salt);
 
       const create = await User.create({
-        name,
+        username:name,
         email,
         password: hashedPassword,
       });
@@ -80,6 +80,8 @@ export class UserController {
       }
 
       const secret = process.env.JWT_SECRET as string;
+
+      console.log(secret);
 
       const token = jwt.sign({ userId: user._id }, secret, {
         expiresIn: "1d",

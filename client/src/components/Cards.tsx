@@ -11,7 +11,7 @@ interface Props {
 
 const Cards = (prop: Props) => {
   return (
-    <div className="max-w-xs rounded-md  bg-gray-900 text-gray-100 hover:scale-105 transition-transform">
+    <div  className="max-w-xs rounded-md  bg-gray-900 text-gray-100 hover:scale-105 transition-transform">
       <img
         src={prop.imgLink}
         alt=""

@@ -3,18 +3,16 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const newApi = createApi({
   reducerPath: "newApi",
   baseQuery: fetchBaseQuery({
-    baseUrl:
-      "https://newsapi.org/v2/everything?q=environment&apiKey=" +
-      import.meta.env.VITE_NEWS_API_KEY,
+    baseUrl: import.meta.env.VITE_API_URL + "/api/news",
   }),
-  tagTypes: ["New"],
+  tagTypes: ["News"],
   endpoints: (builder) => ({
     getAllNews: builder.query({
       query: () => ({
         url: "",
         method: "GET",
       }),
-      providesTags: ["New"],
+      providesTags: ["News"],
     }),
   }),
 });
