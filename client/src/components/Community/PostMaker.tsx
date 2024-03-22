@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Markdown from "react-markdown";
 import { useCreatePostMutation } from "../../store/api/postApi";
@@ -59,11 +59,11 @@ const PostMaker = () => {
             Post Maker
           </h1>
           <div className=" p-4 font-IBMPlexMono shadow-md">
-            <div className="text-3xl ">Name</div>
+            <div className="text-2xl ">Name</div>
             <input
               type="text"
               placeholder="Your Name or any name you want"
-              className="w-full outline-none p-4 text-3xl  "
+              className="w-full outline-none p-4 text-2xl  "
               name="title"
               value={name}
               onChange={(e) => setName(e.target.value)}

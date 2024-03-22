@@ -15,11 +15,12 @@ const ForumCommentSchema: Schema = new Schema(
       ref: "ForumPost",
       required: true,
     },
-    name: {
+    name: { 
       type: String,
       ref: "User",
       required: true,
     },
+    title: { type: String, required: true },
     content: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },

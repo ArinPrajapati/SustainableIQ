@@ -54,8 +54,8 @@ export class ForumCommentController {
     res: Response
   ): Promise<string | void | Response> {
     try {
-      const { postId, name, content } = req.body;
-      if (!postId || !name || !content) {
+      const { postId, name, content , title} = req.body;
+      if (!postId || !name || !content || !title) {
         return res.status(400).json({ message: "All fields are required" });
       }
 
@@ -63,6 +63,7 @@ export class ForumCommentController {
         postId,
         name,
         content,
+        title
       });
 
       if (!create) {

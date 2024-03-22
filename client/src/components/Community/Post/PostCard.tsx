@@ -1,6 +1,7 @@
 import React from "react";
 import PostReaction from "./PostReaction";
 import { Link } from "react-router-dom";
+import { useAddViewMutation } from "@/store/api/postApi";
 
 interface Props {
   title: string | undefined;
@@ -19,6 +20,7 @@ const PostCard = ({
   likes,
   views,
 }: Props) => {
+  const [addView] = useAddViewMutation();
   return (
     <div className="text-3xl">
       {" "}
@@ -41,7 +43,7 @@ const PostCard = ({
         </div>
         <PostReaction views={views} likes={likes} />
         <div className="p-6 pt-0">
-          <Link to={`/community/${postId}`}>
+          <Link to={`/community/${postId}`} onClick={() => addView(postId)}>
             <button
               data-ripple-light="true"
               type="button"

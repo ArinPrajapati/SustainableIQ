@@ -16,13 +16,11 @@ router.get("/", async (req: Request, res: Response) => {
     const { data } = response;
 
     res.status(200).json({ news: data }); // Sending only 'data' to avoid circular reference
-    console.log(data);
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Error fetching news"});
+    res.status(500).json({ message: "Error fetching news" });
     console.error(error);
   }
 });
 
 export default router;
+

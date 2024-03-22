@@ -1,10 +1,14 @@
-import React from "react";
-import { useGetPostByIdQuery } from "../../../store/api/postApi";
+import React, { useEffect } from "react";
+import { useGetPostByIdQuery } from "@/store/api/postApi";
 import Markdown from "react-markdown";
 import { AiOutlineLike } from "react-icons/ai";
 import { GrView } from "react-icons/gr";
 import { FaRegUserCircle } from "react-icons/fa";
 import buttonBg from "../../../assets/img/button.webp";
+import { useAddLikeMutation, useAddViewMutation } from "@/store/api/postApi";
+import CommentModel from "@/components/modems/CommentModel";
+import { Button } from "@/components/ui/button";
+import Comments from "./Comments";
 interface PostProps {
   id: string;
 }
@@ -28,20 +32,31 @@ interface post {
 }
 
 const Post: React.FC<PostProps> = ({ id }) => {
+  const [addLike] = useAddLikeMutation();
+  const [open, setOpen] = React.useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { data, isLoading, isError } = useGetPostByIdQuery(id);
   if (isLoading && data === undefined) {
     return <div className="text-white">Loading...</div>;
   }
+
   return (
     <div className="text-white bg-slate-950 w-full py-5 md:w-fit md:mx-auto h-fit md:min-w-[600px]">
       <div className="flex font-sans justify-between items-center mb-4 px-2">
-        <div className="text-white text-4xl flex justify-center items-center gap-4 ">
+        <div className="text-white text-2xl md:text-3xl flex justify-center items-center gap-4 ">
           {" "}
-          <FaRegUserCircle /> user{" "}
+          <FaRegUserCircle /> {data?.post.authorName || "Anonymous"}
         </div>
 
         <div className="relative w-fit h-fit flex">
-          <button className="flex gap-2 justify-center items-center text-3xl bg-[#f0f0f02d] p-2 m-2 mr-0 rounded-md rounded-r-none  active:scale-95 transition-transform z-[35] ">
+          <button
+            className="flex gap-2 justify-center items-center text-3xl bg-[#f0f0f02d] p-2 m-2 mr-0 rounded-md rounded-r-none  active:scale-95 transition-transform "
+            onClick={() => addLike(data?.post._id)}
+          >
             <AiOutlineLike /> {data?.post.likeCont}
           </button>
 
@@ -65,6 +80,16 @@ const Post: React.FC<PostProps> = ({ id }) => {
           </Markdown>
         </p>
       </div>
+
+      <hr />
+      <Button
+        onClick={() => setOpen(true)}
+        className="my-4 bg-blue-50 hover:bg-slate-300 text-black"
+      >
+        Add Comment
+      </Button>
+      <Comments postId={data?.post._id} />
+      {open && <CommentModel setopen={setOpen} postid={data?.post._id} />}
     </div>
   );
 };
