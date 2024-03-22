@@ -13,9 +13,8 @@ const ForumPostSchema: Schema = new Schema(
     title: { type: String, required: true },
     subtitle: { type: String, required: true },
     content: { type: String, required: true },
-    authorId: {
-      type: mongoose.Schema.Types.ObjectId || String,
-      ref: "User",
+    authorName: {
+      type: String,
       required: true,
     },
     imgLink: { type: String },

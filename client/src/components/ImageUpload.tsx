@@ -17,7 +17,10 @@ const ImageUpload: React.FC<Props> = ({ setImageLink }) => {
       try {
         const responseData = await uploadImage(image);
         console.log("Image uploaded successfully:", responseData);
-        setImageLink(responseData?.data.url);
+        if (!responseData?.data?.url) {
+          throw new Error("Failed to upload image");
+        }
+        setImageLink(responseData?.data?.url);
       } catch (error) {
         console.error("Error uploading image:", error);
       }

@@ -10,6 +10,7 @@ const PostMaker = () => {
   const [imageLink, setImageLink] = useState<string | undefined>("");
   const [createPostApi, { isLoading, isError }] = useCreatePostMutation();
   const [title, setTitle] = useState("");
+  const [name, setName] = useState("");
   const [subtitle, setSubtitle] = useState("");
 
   const createPost = (e: { preventDefault: () => void }) => {
@@ -22,7 +23,7 @@ const PostMaker = () => {
           subtitle: subtitle,
           content: markdown,
           imgLink: imageLink,
-          authorId: "65bb08978914d83ddce533cc",
+          authorName: name,
         }).then(() => {
           setMarkdown("");
           setImageLink("");
@@ -39,6 +40,7 @@ const PostMaker = () => {
         title: title,
         subtitle: subtitle,
         content: markdown,
+        authorName: name,
       });
     }
   };
@@ -57,6 +59,15 @@ const PostMaker = () => {
             Post Maker
           </h1>
           <div className=" p-4 font-IBMPlexMono shadow-md">
+            <div className="text-3xl ">Name</div>
+            <input
+              type="text"
+              placeholder="Your Name or any name you want"
+              className="w-full outline-none p-4 text-3xl  "
+              name="title"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <div className="text-3xl ">Title</div>
             <input
               type="text"

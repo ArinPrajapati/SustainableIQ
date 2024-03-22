@@ -15,8 +15,8 @@ const ForumCommentSchema: Schema = new Schema(
       ref: "ForumPost",
       required: true,
     },
-    authorId: {
-      type: mongoose.Schema.Types.ObjectId,
+    name: {
+      type: String,
       ref: "User",
       required: true,
     },

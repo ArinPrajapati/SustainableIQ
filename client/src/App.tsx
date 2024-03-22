@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Community from "./pages/Community";
 import PostPage from "./pages/PostPage";
 import News from "./pages/News";
+import LoginForm from "@/components/LoginForm";
+
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -20,6 +22,7 @@ function App() {
           style={{ scaleX: scrollYProgress }}
         />
         <Nav />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Loading />} />

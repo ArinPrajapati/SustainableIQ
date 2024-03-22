@@ -9,7 +9,7 @@ import connectDB from "./config/connectDB";
 import ForumRouter from "./routes/ForumRouter";
 import ForumCommnetRouter from "./routes/ForumPostCommentRouter";
 import UserRouter from "./routes/UserRoutes";
-import NewRouter from "./routes/NewRoutes";
+import NewsRouter from "./routes/NewsRoutes";
 
 const app = express();
 const port = process.env.PORT || 3004;
@@ -26,7 +26,7 @@ app.use("/api/image", imgLink);
 app.use("/api/forumPost", ForumRouter);
 app.use("/api/forumComment", ForumCommnetRouter);
 app.use("/api/user", UserRouter);
-app.use("/api/news", NewRouter) ;
+app.use("/api/news", NewsRouter) ;
 
 server.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

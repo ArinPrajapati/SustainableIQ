@@ -16,8 +16,8 @@ export class ForumPostController {
     res: Response
   ): Promise<string | void | Response> {
     try {
-      const { title, subtitle, content, authorId, imgLink } = req.body;
-      if (!title || !subtitle || !content || !authorId) {
+      const { title, subtitle, content, authorName, imgLink } = req.body;
+      if (!title || !subtitle || !content || !authorName) {
         return res.status(400).json({ message: "All fields are required" });
       }
 
@@ -25,7 +25,7 @@ export class ForumPostController {
         title,
         subtitle,
         content,
-        authorId,
+        authorName,
         imgLink,
       });
 
