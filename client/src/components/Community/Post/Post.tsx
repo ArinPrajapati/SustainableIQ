@@ -6,7 +6,7 @@ import { GrView } from "react-icons/gr";
 import { FaRegUserCircle } from "react-icons/fa";
 import buttonBg from "../../../assets/img/button.webp";
 import { useAddLikeMutation, useAddViewMutation } from "@/store/api/postApi";
-import CommentModel from "@/components/modems/CommentModel";
+import CommentModel from "@/components/modals/CommentModel";
 import { Button } from "@/components/ui/button";
 import Comments from "./Comments";
 interface PostProps {
@@ -88,7 +88,9 @@ const Post: React.FC<PostProps> = ({ id }) => {
       >
         Add Comment
       </Button>
+
       <Comments postId={data?.post._id} />
+
       {open && <CommentModel setopen={setOpen} postid={data?.post._id} />}
     </div>
   );

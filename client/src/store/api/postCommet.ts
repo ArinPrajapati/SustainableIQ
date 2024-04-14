@@ -1,4 +1,4 @@
-import { CreateApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const postCommentApi = createApi({
   reducerPath: "postCommentApi",
@@ -15,7 +15,12 @@ export const postCommentApi = createApi({
       providesTags: ["PostComment"],
     }),
     createPostComment: builder.mutation({
-      query: (comment) => ({
+      query: (comment: {
+        name: string;
+        postId: string;
+        content: string;
+        title: string;
+      }) => ({
         url: "add",
         method: "POST",
         body: comment,
@@ -29,7 +34,7 @@ export const postCommentApi = createApi({
       }),
       invalidatesTags: ["PostComment"],
     }),
-    getCommetsbyPostId: builder.query({
+    getCommentsPostId: builder.query({
       query: (id) => ({
         url: `getComments/${id}`,
         method: "GET",
@@ -40,7 +45,8 @@ export const postCommentApi = createApi({
 });
 
 export const {
-  useGetAllPostCommentsQuery,
   useCreatePostCommentMutation,
+  useGetAllPostCommentsQuery,
+  useGetCommentsPostIdQuery,
   useDeletePostCommentMutation,
 } = postCommentApi;

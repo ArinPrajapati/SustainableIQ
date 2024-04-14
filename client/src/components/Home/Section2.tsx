@@ -24,6 +24,7 @@ const Section2 = () => {
     <div
       className="w-full bg-black mt-5 p-10 flex flex-col justify-center items-center pl-[10rem]"
       ref={tef}
+      id="section2"
     >
       <AnimatePresence>
         {containerRef && (

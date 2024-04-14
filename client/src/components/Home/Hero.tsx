@@ -33,11 +33,13 @@ const Hero = () => {
             Empowering Change Through Knowledge, Challenges, and Eco-Friendly
             Action
           </div>
-          <Button
-            text={"Learn More"}
-            color={"#8333F5"}
-            extraClasses="active:scale-95 mt-8 text-black"
-          />
+          <a href="#section2">
+            <Button
+              text={"Learn More"}
+              color={"#8333F5"}
+              extraClasses="active:scale-95 mt-8 text-black"
+            />
+          </a>
         </motion.div>
       </AnimatePresence>
     </div>

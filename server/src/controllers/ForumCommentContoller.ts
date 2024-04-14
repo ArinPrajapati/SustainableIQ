@@ -23,9 +23,9 @@ export class ForumCommentController {
   ): Promise<string | void | Response> {
     try {
       const { id } = req.params;
-      const comment = await ForumComment.findById(id);
+      const comment = await ForumComment.find({postId: id});
       if (!comment) {
-        return res.status(500).json({ message: "No comment found" });
+        return res.status(200).json({ message: "No comment found" });
       }
       res.status(200).json({ message: "success", comment: comment });
     } catch (error) {
@@ -67,7 +67,7 @@ export class ForumCommentController {
       });
 
       if (!create) {
-        return res.status(500).json({ message: "Error creating message" });
+        return res.status(200).json({ message: "Error creating message" });
       }
       res.status(200).json({ message: create, status: "success" });
     } catch (error) {

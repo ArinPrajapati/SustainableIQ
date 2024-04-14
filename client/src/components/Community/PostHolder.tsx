@@ -12,6 +12,7 @@ interface PostData {
   likeCont?: number;
   content?: string;
   authorId?: string; // Assuming authorId is a string
+  authorName: string;
 }
 
 const PostHolder = () => {
@@ -31,7 +32,7 @@ const PostHolder = () => {
       <h1 className="text-center w-full text-[4rem] flex-wrap my-4 font-[1000] text-white">
         All Posts
       </h1>
-      <div className="w-full flex gap-10 p-10 my-4 flex-wrap justify-center items-center">
+      <div className="w-full flex gap-3 p-10 my-4 flex-wrap justify-center items-center">
         {(postData !== undefined || null) &&
           postData?.post?.map((item: PostData) => (
             <PostCard
@@ -42,6 +43,7 @@ const PostHolder = () => {
               postId={item._id}
               likes={item.likeCont}
               views={item.viewCont}
+              authorName={item.authorName || "Anonymous"}
             />
           ))}
       </div>

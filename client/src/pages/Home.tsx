@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className=" flex flex-col gap-[6rem] ">
       <Hero />
-      <ActionContainer />
+      {/* <ActionContainer /> */}
       <Section2 />
       <Section3 />
       <Section4 />

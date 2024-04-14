@@ -45,7 +45,7 @@ const Nav = () => {
             to="/"
             onClick={() => handleLinkClick("home")}
             className={`${
-              currentPage === "home"
+              current === "home"
                 ? "text-orange-500 underline underline-offset-8"
                 : ""
             } hover:text-blue-700 transition`}
@@ -53,37 +53,37 @@ const Nav = () => {
             Home
           </Link>
           <a
-            href="#about"
+            href="/#section2"
             onClick={() => handleLinkClick("about")}
             className={`${
-              currentPage === "about" ? active : ""
+              current === "about" ? active : ""
             } hover:text-blue-700 transition`}
           >
             Learn
           </a>
           <Link
-            to="#services"
-            onClick={() => handleLinkClick("services")}
+            to="/Challenges"
+            onClick={() => handleLinkClick("challenges")}
             className={`${
-              currentPage === "services" ? active : ""
+              current === "challenges" ? active : ""
             } hover:text-blue-700 transition`}
           >
             Challenges
           </Link>
-          <a
-            href="#resources"
+          <Link
+            to="/resources"
             onClick={() => handleLinkClick("resources")}
             className={`${
-              currentPage === "resources" ? active : ""
+              current === "resources" ? active : ""
             } hover:text-blue-700 transition`}
           >
             Resources
-          </a>
+          </Link>
           <Link
             to="/community"
             onClick={() => handleLinkClick("community")}
             className={`${
-              currentPage === "community" ? active : ""
+              current === "community" ? active : ""
             } hover:text-blue-700 transition`}
           >
             Community
@@ -92,7 +92,7 @@ const Nav = () => {
             to="/news"
             onClick={() => handleLinkClick("news")}
             className={`${
-              currentPage === "news" ? active : ""
+              current === "news" ? active : ""
             } hover:text-blue-700 transition`}
           >
             News
@@ -111,7 +111,7 @@ const Nav = () => {
                 to="/"
                 onClick={() => handleLinkClick("home")}
                 className={`${
-                  currentPage === "home" ? active : ""
+                  current === "home" ? active : ""
                 } hover:text-blue-700 transition`}
               >
                 Home
@@ -120,7 +120,7 @@ const Nav = () => {
                 href="#about"
                 onClick={() => handleLinkClick("about")}
                 className={`${
-                  currentPage === "about" ? active : ""
+                  current === "about" ? active : ""
                 } hover:text-blue-700 transition`}
               >
                 Learn
@@ -129,7 +129,7 @@ const Nav = () => {
                 to="#services"
                 onClick={() => handleLinkClick("services")}
                 className={`${
-                  currentPage === "services" ? active : ""
+                  current === "services" ? active : ""
                 } hover:text-blue-700 transition`}
               >
                 Challenges
@@ -138,7 +138,7 @@ const Nav = () => {
                 href="#resources"
                 onClick={() => handleLinkClick("resources")}
                 className={`${
-                  currentPage === "resources" ? active : ""
+                  current === "resources" ? active : ""
                 } hover:text-blue-700 transition`}
               >
                 Resources
@@ -147,7 +147,7 @@ const Nav = () => {
                 to="/community"
                 onClick={() => handleLinkClick("community")}
                 className={`${
-                  currentPage === "community" ? active : ""
+                  current === "community" ? active : ""
                 } hover:text-blue-700 transition`}
               >
                 Community
@@ -156,7 +156,7 @@ const Nav = () => {
                 href="#New"
                 onClick={() => handleLinkClick("news")}
                 className={`${
-                  currentPage === "news" ? active : ""
+                  current === "news" ? active : ""
                 } hover:text-blue-700 transition`}
               >
                 News

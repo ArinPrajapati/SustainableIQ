@@ -10,7 +10,9 @@ import Community from "./pages/Community";
 import PostPage from "./pages/PostPage";
 import News from "./pages/News";
 import LoginForm from "@/components/LoginForm";
-
+import Challenges from "./pages/Challenges";
+import { Learn } from "./pages/Learn";
+import Resources from "./pages/Resources";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -31,6 +33,9 @@ function App() {
             <Route path=":id" element={<PostPage />} />
           </Route>
           <Route path="/news" element={<News />} />
+          <Route path="/challenges" element={<Challenges />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/resources" element={<Resources />} />
         </Routes>
 
         <Footer />
