@@ -5,6 +5,7 @@ import { useCreatePostMutation } from "../../store/api/postApi";
 
 import "./PostMaker.css";
 import ImageUpload from "../ImageUpload";
+import { toast } from "react-toastify";
 const PostMaker = () => {
   const [markdown, setMarkdown] = useState("");
   const [imageLink, setImageLink] = useState<string | undefined>("");
@@ -15,7 +16,20 @@ const PostMaker = () => {
 
   const createPost = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (!markdown) return;
+    if (!markdown) {
+      toast.error("Post cannot be empty");
+      return;
+    }
+    if (!title) {
+      toast.error("Title cannot be empty");
+      return;
+    }
+
+    if (!subtitle) {
+      toast.error("Subtitle cannot be empty");
+      return;
+    }
+
     if (imageLink) {
       try {
         createPostApi({
@@ -29,11 +43,11 @@ const PostMaker = () => {
           setImageLink("");
           setTitle("");
           setSubtitle("");
-          alert("Post created successfully");
+          toast.success("Post created successfully");
         });
       } catch (error) {
         console.log(error);
-        alert("Post creation failed");
+        toast.error("Post creation failed");
       }
     } else {
       createPostApi({
@@ -41,7 +55,18 @@ const PostMaker = () => {
         subtitle: subtitle,
         content: markdown,
         authorName: name,
-      });
+      })
+        .then(() => {
+          setMarkdown("");
+          setImageLink("");
+          setTitle("");
+          setSubtitle("");
+          toast.success("Post created successfully");
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error("Post creation failed");
+        });
     }
   };
 
@@ -109,7 +134,6 @@ const PostMaker = () => {
               <button
                 className="px-8 py-3 font-semibold rounded m-4 bg-gray-400 text-gray-800 disabled:cursor-not-allowed disabled:bg-red-400"
                 onClick={createPost}
-                disabled={!imageLink}
                 type="submit"
               >
                 Submit{" "}

@@ -117,7 +117,7 @@ const Nav = () => {
                 Home
               </Link>
               <a
-                href="#about"
+                href="#section2"
                 onClick={() => handleLinkClick("about")}
                 className={`${
                   current === "about" ? active : ""
@@ -126,7 +126,7 @@ const Nav = () => {
                 Learn
               </a>
               <Link
-                to="#services"
+                to="/Challenges"
                 onClick={() => handleLinkClick("services")}
                 className={`${
                   current === "services" ? active : ""
@@ -134,15 +134,15 @@ const Nav = () => {
               >
                 Challenges
               </Link>
-              <a
-                href="#resources"
+              <Link
+                to="/resources"
                 onClick={() => handleLinkClick("resources")}
                 className={`${
                   current === "resources" ? active : ""
                 } hover:text-blue-700 transition`}
               >
                 Resources
-              </a>
+              </Link>
               <Link
                 to="/community"
                 onClick={() => handleLinkClick("community")}
@@ -153,7 +153,7 @@ const Nav = () => {
                 Community
               </Link>
               <a
-                href="#New"
+                href="/news"
                 onClick={() => handleLinkClick("news")}
                 className={`${
                   current === "news" ? active : ""

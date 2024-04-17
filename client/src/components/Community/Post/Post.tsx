@@ -9,6 +9,7 @@ import { useAddLikeMutation, useAddViewMutation } from "@/store/api/postApi";
 import CommentModel from "@/components/modals/CommentModel";
 import { Button } from "@/components/ui/button";
 import Comments from "./Comments";
+import { toast } from "react-toastify";
 interface PostProps {
   id: string;
 }
@@ -44,6 +45,28 @@ const Post: React.FC<PostProps> = ({ id }) => {
     return <div className="text-white">Loading...</div>;
   }
 
+  const addLikeHandler = async (id: string) => {
+    // Retrieve liked post IDs from local storage
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "[]");
+
+    // Check if the current post ID is already in the array
+    if (!likedPosts.includes(id)) {
+      // Add the post ID to the array
+      likedPosts.push(id);
+
+      // Update local storage with the updated array
+      localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
+
+      // Perform the like operation (assuming addLike(id) is a function that adds a like)
+      await addLike(id);
+      toast.success("Post liked successfully!");
+    } else {
+      // Post is already liked, you might want to handle this case accordingly
+      console.log("Post is already liked.");
+      toast.error("Post is already liked");
+    }
+  };
+
   return (
     <div className="text-white bg-slate-950 w-full py-5 md:w-fit md:mx-auto h-fit md:min-w-[600px]">
       <div className="flex font-sans justify-between items-center mb-4 px-2">
@@ -55,7 +78,7 @@ const Post: React.FC<PostProps> = ({ id }) => {
         <div className="relative w-fit h-fit flex">
           <button
             className="flex gap-2 justify-center items-center text-3xl bg-[#f0f0f02d] p-2 m-2 mr-0 rounded-md rounded-r-none  active:scale-95 transition-transform "
-            onClick={() => addLike(data?.post._id)}
+            onClick={() => addLikeHandler(data?.post._id)}
           >
             <AiOutlineLike /> {data?.post.likeCont}
           </button>
