@@ -9,18 +9,21 @@ const data = [
     name: "",
     sub: "Read how users like you are making a differ",
     btnText: "Read more",
+    pageLink: "community",
   },
   {
     img: "https://i.pinimg.com/564x/84/3f/08/843f084562152993d8a8c9069e51e64f.jpg",
     name: "",
     sub: "Share your success story with user",
-    btnText: "Community",
+    btnText: "Read more",
+    pageLink: "community",
   },
   {
     img: "https://i.pinimg.com/564x/4a/47/20/4a47201c032b36fcc5becb21485243bc.jpg",
     name: "",
     sub: "See the positive environmental impact achieved by our community.",
-    btnText: "Read more",
+    "btnText": "Read more",
+    "pageLink": "community",
   },
 ];
 
@@ -45,6 +48,7 @@ const Section3 = () => {
                     des={item.sub}
                     buttonText={item.btnText}
                     imgLink={item.img}
+                    pageLink={item.btnText}
                   />
                 );
               })}

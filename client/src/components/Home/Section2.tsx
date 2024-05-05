@@ -12,6 +12,7 @@ interface data {
   issue: string;
   description: string;
   imgLink: string;
+  pageLink: string;
 }
 
 const Section2 = () => {
@@ -47,6 +48,7 @@ const Section2 = () => {
                     issue={item.issue}
                     des={item.description}
                     imgLink={item.imgLink}
+                    pageLink={item.pageLink}
                   />
                 );
               })}

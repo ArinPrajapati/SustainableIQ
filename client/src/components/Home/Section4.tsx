@@ -1,5 +1,6 @@
 import { useInView } from "framer-motion";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Section4 = () => {
   const tef = React.useRef(null);
@@ -29,13 +30,14 @@ const Section4 = () => {
               Downloadable guides for sustainable living. Links to external
               resources and recommended reading.
             </p>
-            <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900">
-              Read More
-            </button>
+            <Link to="/resources">
+              <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900">
+                Read More
+              </button>
+            </Link>
           </div>
         </div>
       </section>
-      
     </div>
   );
 };
