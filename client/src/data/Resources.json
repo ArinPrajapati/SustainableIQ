@@ -1,0 +1,123 @@
+[
+  {
+    "name": "Environmental Protection Agency (EPA)",
+    "url": "https://www.epa.gov/",
+    "description": "Comprehensive resource providing information on various environmental issues and initiatives by the United States Environmental Protection Agency.",
+    "img_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Flag_of_the_United_States_Environmental_Protection_Agency.png/1200px-Flag_of_the_United_States_Environmental_Protection_Agency.png"
+    
+  },
+  {
+    "name": "World Wildlife Fund (WWF)",
+    "url": "https://www.worldwildlife.org/",
+    "description": "Focuses on global conservation, working towards the protection of endangered species and their habitats.",
+    "img_link": "https://dwglogo.com/wp-content/uploads/2015/11/World-Wildlife-Fund-logo.png"
+  },
+  {
+    "name": "Greenpeace",
+    "url": "https://www.greenpeace.org/",
+    "description": "An international environmental organization that campaigns on various issues, including climate change, deforestation, and ocean pollution.",
+    "img_link": "https://i.pinimg.com/originals/ea/d4/d4/ead4d428b35dcd3d7c9e9505e62987c4.jpg"
+  },
+  {
+    "name": "National Geographic Environment",
+    "url": "https://www.nationalgeographic.com/environment",
+    "description": "National Geographic's section dedicated to environmental news, articles, and educational resources.",
+    "img_link": "https://logos-world.net/wp-content/uploads/2020/09/National-Geographic-Logo.png"
+  },
+  {
+    "name": "UN Environment Programme (UNEP)",
+    "url": "https://www.unep.org/",
+    "description": "Works towards sustainable development through promoting environmental protection and conservation efforts globally.",
+    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIG9gKsk2p19H1PjniQ8aW5l4n0zim0tVQOVPJ1H7n9Q&s"
+  },
+  {
+    "name": "The Nature Conservancy",
+    "url": "https://www.nature.org/",
+    "description": "A leading conservation organization focusing on protecting lands and waters around the world.",
+    "img_link": "https://logowik.com/content/uploads/images/the-nature-conservancy6389.logowik.com.webp"
+  },
+  {
+    "name": "Environmental Defense Fund (EDF)",
+    "url": "https://www.edf.org/",
+    "description": "Focuses on solving critical environmental problems through science, advocacy, and collaboration.",
+    "img_link": "https://logowik.com/content/uploads/images/environmental-defense-fund248.logowik.com.webp"
+  },
+  {
+    "name": "NASA Climate Change",
+    "url": "https://climate.nasa.gov/",
+    "description": "Provides scientific information and data related to climate change, including research findings and educational resources.",
+    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCpcdz5xh5tYIRMF-0xQMKoJCrpnDpE3PGgtSik4Pnww&s"
+  },
+  {
+    "name": "Intergovernmental Panel on Climate Change (IPCC)",
+    "url": "https://www.ipcc.ch/",
+    "description": "Assesses scientific information on climate change and provides reports to support policymakers in addressing this global challenge.",
+    "img_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Intergovernmental_Panel_on_Climate_Change_Logo.svg/1200px-Intergovernmental_Panel_on_Climate_Change_Logo.svg.png"
+  },
+  {
+    "name": "The Sierra Club",
+    "url": "https://www.sierraclub.org/",
+    "description": "A grassroots environmental organization focused on protecting communities, wild places, and the planet.",
+    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ30Zw4_iEVufHi6mSX0gQlP7FyzYZKpwVPAgPP9kUJyQ&s"
+  },
+  {
+    "name": "Union of Concerned Scientists (UCS)",
+    "url": "https://www.ucsusa.org/",
+    "description": "Conducts research and advocacy to solve pressing environmental and social issues.",
+    "img_link": "https://www.ucsusa.org/themes/custom/ucstheme/assets/social-logo.png"
+  },
+  {
+    "name": "Environmental Working Group (EWG)",
+    "url": "https://www.ewg.org/",
+    "description": "Provides information on environmental health, including research and consumer guides on products and pollutants.",
+    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9ab8A8Tn2ZK4i76-29RF_1mpJbgzAuzGX9N7tO0o1Fg&s"
+  },
+  {
+    "name": "Conservation International",
+    "url": "https://www.conservation.org/",
+    "description": "Focuses on protecting biodiversity hotspots around the world and promoting sustainable development.",
+    "img_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/CIlogo.svg/1200px-CIlogo.svg.png"
+  },
+  {
+    "name": "Rainforest Action Network (RAN)",
+    "url": "https://www.ran.org/",
+    "description": "Campaigns to protect tropical rainforests and the rights of their inhabitants.",
+    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEcA03Gf5ygtKNAkJbnejAwVvaqSEWahxiU9wznKou7Q&s"
+  },
+  {
+    "name": "Global Footprint Network",
+    "url": "https://www.footprintnetwork.org/",
+    "description": "Provides tools and resources for measuring and managing ecological footprints to promote sustainability.",
+    "img_link": "https://overshoot.footprintnetwork.org/content/uploads/2021/07/gfn_logo_400.jpg"
+  },
+  {
+    "name": "Earthjustice",
+    "url": "https://earthjustice.org/",
+    "description": "A nonprofit environmental law organization focusing on litigation to protect natural resources and wildlife.",
+    "img_link": "https://www.weact.org/wp-content/uploads/2022/11/EarthJustice-Logo.png"
+  },
+  {
+    "name": "The Guardian Environment Section",
+    "url": "https://www.theguardian.com/environment",
+    "description": "The Guardian's environmental news section featuring articles, opinion pieces, and investigative reports.",
+    "img_link": "https://erjjiostudios.com/wp-content/uploads/part-of-guardian-environment-network-v2.png"
+  },
+  {
+    "name": "The New York Times Environment Section",
+    "url": "https://www.nytimes.com/section/climate",
+    "description": "The New York Times' coverage of climate change and environmental issues.",
+    "img_link": "https://pbs.twimg.com/profile_images/968125317943406597/b5E2phyp_400x400.jpg"
+  },
+  {
+    "name": "Environmental News Network (ENN)",
+    "url": "https://www.enn.com/",
+    "description": "Provides daily environmental news articles covering a wide range of topics from around the world.",
+    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkhmmyjYx0Nf8_NxklhlLGK1pEEDgOWoX9qlinasoNcw&s"
+  },
+  {
+    "name": "National Resource Defense Council (NRDC)",
+    "url": "https://www.nrdc.org/",
+    "description": "Works to safeguard the earth—its people, its plants and animals, and the natural systems on which all life depends.",
+    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPCvnXawdM5H2nShR3H_T5aUArP-SthuhMOG6w19hCwA&s"
+  }
+]

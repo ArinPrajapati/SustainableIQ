@@ -1,0 +1,51 @@
+.main-content-box {
+  background-color: #000000;
+  position: relative;
+}
+
+.topics-content {
+  background-color: #8333f5;
+  position: fixed;
+  display: flex;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.topics-content ul li {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.topics-content ul li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.content {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.content h2 {
+  font-size: 2.1rem;
+}
+
+.content p {
+  font-size: 1.3rem;
+}
+
+.image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box1 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 1.3rem;
+}
